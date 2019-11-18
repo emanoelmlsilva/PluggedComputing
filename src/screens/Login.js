@@ -4,11 +4,11 @@ import { View,
          StyleSheet,
          TextInput,
          TouchableOpacity,
-         Button,         
+         Button,      
+         Alert,   
          } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
-import PasswordInputText from 'react-native-hide-show-password-input';
 
 export default class Login extends Component{
 
@@ -18,6 +18,7 @@ export default class Login extends Component{
     }
 
     render(){
+       const {navigate} = this.props.navigation;
         return(
             <View style={styles.container}>
              <Text style={styles.Text}>Login</Text>             
@@ -46,7 +47,7 @@ export default class Login extends Component{
                     />                              
                 </View>
             </View>
-            <TouchableOpacity style={styles.containerButton}>            
+            <TouchableOpacity style={styles.containerButton} onPress={() => {if(checkInput(this.state.email,this.state.passworld))navigate('Register')}}>            
                 <Text style={styles.textButton}>Entrar</Text>
             </TouchableOpacity>      
             </View>
@@ -54,6 +55,14 @@ export default class Login extends Component{
     }
 }
 
+const checkInput = (inputEmail, inputPassworld) => {
+    if(inputEmail != "" && inputPassworld != ""){          
+        return true;
+    }else{
+        //Alert.alert('Aviso','Email ou Senha invalído');
+    }
+     return true;
+} 
 
 const styles = StyleSheet.create({
  container:{       
