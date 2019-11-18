@@ -78,8 +78,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     width: '80%',
     height: 200, 
-    
-
  },
  Text:{     
     color: '#FFFFFF',
