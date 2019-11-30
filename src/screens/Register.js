@@ -1,28 +1,19 @@
-import React, { Component } from 'react';
-import { View,
-         Text,
-         StyleSheet,
-         TextInput,
-         TouchableOpacity,
-         Button,         
-         } from 'react-native';
-
+import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
-import  Expense  from '../components/Expense';
-import  Recipe  from '../components/Recipe';
+import  Account  from '../components/Account';
 
 const MenuRoutes = {  
     Recipe: {
         name: 'Recipe',
-        screen: Recipe,
+        screen: Account,
         navigationOptions:{
-            title: 'Receita',           
+            title: 'Receita',                       
         }
     },
     Expense: {
         name: 'Expense',
-        screen: Expense,
+        screen: Account,
         navigationOptions:{
             title: 'Despesas',
         }
