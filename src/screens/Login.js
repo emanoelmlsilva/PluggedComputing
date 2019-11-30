@@ -10,11 +10,15 @@ import { View,
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+    const initialState={
+        email: '',
+        password: '',
+    }
+
 export default class Login extends Component{
 
     state = {
-        email: '',
-        passworld: '',
+        ...initialState,
     }
 
     render(){
@@ -42,12 +46,12 @@ export default class Login extends Component{
                         secureTextEntry={true}
                         style={styles.input}
                         placeholder="Senha"
-                        onChangeText={(passworld) => this.setState({passworld})}
-                        value={this.state.passworld}
+                        onChangeText={(password) => this.setState({password})}
+                        value={this.state.password}
                     />                              
                 </View>
             </View>
-            <TouchableOpacity style={styles.containerButton} onPress={() => {if(checkInput(this.state.email,this.state.passworld))navigate('Register')}}>            
+            <TouchableOpacity style={styles.containerButton} onPress={() => {if(checkInput(this.state.email,this.state.password))navigate('Register')}}>            
                 <Text style={styles.textButton}>Entrar</Text>
             </TouchableOpacity>      
             </View>
@@ -55,13 +59,14 @@ export default class Login extends Component{
     }
 }
 
-const checkInput = (inputEmail, inputPassworld) => {
-    if(inputEmail != "" && inputPassworld != ""){          
-        return true;
-    }else{
-        //Alert.alert('Aviso','Email ou Senha invalído');
-    }
-     return true;
+const checkInput = (inputEmail, inputPassword) => {
+
+    if(inputEmail == "" || inputPassword == ""){          
+        Alert.alert('Aviso','Preencha todos os campos');
+        return false;
+    }       
+    
+    return true;
 } 
 
 const styles = StyleSheet.create({
