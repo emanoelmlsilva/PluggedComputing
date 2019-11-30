@@ -10,17 +10,21 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "deep-extend": "^0.5.1",
     "react": "16.9.0",
     "react-native": "0.61.4",
-    "react-native-gesture-handler": "^1.5.0",
+    "react-native-datepicker": "^1.7.2",
+    "react-native-gesture-handler": "^1.5.1",
     "react-native-hide-show-password-input": "^1.1.0",
+    "react-native-picker": "^4.3.7",
     "react-native-reanimated": "^1.4.0",
     "react-native-screens": "^1.0.0-alpha.23",
     "react-native-vector-icons": "^6.6.0",
     "react-native-webview": "^7.5.1",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.3",
-    "react-navigation-tabs": "^2.5.6"
+    "react-navigation-tabs": "^2.5.6",
+    "sequelize-cli": "^5.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
